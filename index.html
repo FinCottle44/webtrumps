@@ -1,0 +1,951 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Creative - Bootstrap 3 Responsive Admin Template">
+    <meta name="author" content="GeeksLabs">
+    <meta name="keyword" content="Creative, Dashboard, Admin, Template, Theme, Bootstrap, Responsive, Retina, Minimal">
+    <link rel="shortcut icon" href="img/card.png">
+
+    <title>Trumps Scoreboard</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- bootstrap theme -->
+    <link href="css/bootstrap-theme.css" rel="stylesheet">
+    <!--external css-->
+    <!-- font icon -->
+    <link href="css/elegant-icons-style.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <!-- owl carousel -->
+    <link rel="stylesheet" href="css/owl.carousel.css" type="text/css">
+    <link href="css/jquery-jvectormap-1.2.2.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <link href="css/widgets.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet">
+    <link href="css/xcharts.min.css" rel=" stylesheet">
+    <link href="css/jquery-ui-1.10.4.min.css" rel="stylesheet">
+    <!-- =======================================================
+    Theme Name: NiceAdmin
+    Theme URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+    Author: BootstrapMade
+    Author URL: https://bootstrapmade.com
+
+    Notes:
+    - Add backspace
+  ======================================================= -->
+</head>
+
+<body>
+    <!-- container section start -->
+    <section id="container" class="">
+
+        <header class="header dark-bg">
+            <!--logo start-->
+            <a href="index.html" class="logo"><img src="img/card.png" width="32" height="32"> Trumps <span class="lite">Scoreboard</span> <span class="ver">v1.0.0</span> </a>
+            <!--logo end-->
+        </header>
+        <!--header end-->
+        <!--main content start-->
+        <section id="main-content">
+            <section class="wrapper">
+                <div class="row hide" id="winnerPanel">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="info-box yellow-bg">
+
+                            <div class="btn">
+                                <div class="count">Winner!</div>
+                            </div>
+                            <div class="description" id="winnerName">winner</div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row" id="populatePanel">
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="info-box yellow-bg">
+
+                            <div class="btn" onclick="inputPlayers()">
+                                <div class="count">Populate</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="info-box yellow-bg hide" id="GameInformation">
+                        <div class="splitPanelLeft" id="pred">Round
+                            <div class="title2" id="roundNum">1</div>
+                        </div>
+                        <div class="splitPanelMid" id="pred">Cards
+                            <div class="title2" id="NumCards"></div>
+                        </div>
+                        <div class="splitPanelRight" id="pred">Trump
+                            <div class="title2" id="TrumpDisplay"></div>
+                        </div>
+
+                    </div>
+                    <div class="info-box red-bg hide" id="PlayerInformation">
+                        <div class="splitHalfPanelLeft" id="pred">Player
+                            <div class="title2" id="playerName">w</div>
+                        </div>
+                        <div class="splitHalfPanelRight" id="pred">Dealer
+                            <div class="title2" id="dealerName">q</div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="panel-body" id="inpPlayersDiv">
+                    <div class="row">
+
+                    </div>
+
+                    <div class="description" id="prediction">Type Round 1 dealer FIRST, then in clockwise seated order</div>
+                    <form class="form-horizontal " method="get">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">1</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="First dealer name" id="pA">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">2</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Player 2 name" id="pB">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">3</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Player 3 name" id="pC">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">4</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Player 4 name" id="pD">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">5</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Player 5 name" id="pE">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">6</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Player 6 name" id="pF">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">7</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Player 7 name" id="pG">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">8</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Player 8 name" id="pH">
+                            </div>
+                        </div>
+
+                        <center>
+                            <div class="panel-body" onclick="PopulatePlayers()"><a class="btn btn-warning">Apply</a></div>
+                        </center>
+                    </form>
+                </div>
+                <div class="row">
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="info-box yellow-bg hide" id="GameInformation">
+                            <div class="splitPanelLeft" id="pred">Round
+                                <div class="title2" id="roundNum">1</div>
+                            </div>
+                            <div class="splitPanelMid" id="pred">Cards
+                                <div class="title2" id="NumCards"></div>
+                            </div>
+                            <div class="splitPanelRight" id="pred">Trump
+                                <div class="title2" id="TrumpDisplay"></div>
+                            </div>
+
+                        </div>
+                        <div class="info-box red-bg hide" id="PlayerInformation">
+                            <div class="splitHalfPanelLeft" id="pred">Player
+                                <div class="title2" id="playerName">w</div>
+                            </div>
+                            <div class="splitHalfPanelRight" id="pred">Dealer
+                                <div class="title2" id="dealerName">q</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body hide" id="inpCustomRound">
+                    <div class="description">Custom number of starting cards? Leave blank if maximum is desired.</div>
+                    <form class="form-horizontal " method="get">
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Starting number of cards:</label>
+                            <div class="col-sm-10">
+                                <input type="text" class="form-control" placeholder="Maximum" id="customRoundInput">
+                            </div>
+                        </div>
+                </div>
+
+                <center>
+                    <div class="panel-body hide" id="customRoundApply" onclick="begin()"><a class="btn btn-warning">Apply</a></div>
+                </center>
+                </form>
+                </div>
+                <div class="panel-body" id="inpDiv">
+
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <div class="info-box blue-bg hide" id="predictionPanel">
+                                <div class="title" id="prediction">Prediction</div>
+                                <div class="btn" onclick="enableConfirmButton('P-0')" id="predButtonP-0">
+                                    <div class="count">0</div>
+                                    <div class="title predictionLabels" id="predTitleP-0"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-1')" id="predButtonP-1">
+                                    <div class="count">1</div>
+                                    <div class="title predictionLabels" id="predTitleP-1"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-2')" id="predButtonP-2">
+                                    <div class="count">2</div>
+                                    <div class="title predictionLabels" id="predTitleP-2"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-3')" id="predButtonP-3">
+                                    <div class="count">3</div>
+                                    <div class="title predictionLabels" id="predTitleP-3"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-4')" id="predButtonP-4">
+                                    <div class="count">4</div>
+                                    <div class="title predictionLabels" id="predTitleP-4"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-5')" id="predButtonP-5">
+                                    <div class="count">5</div>
+                                    <div class="title predictionLabels" id="predTitleP-5"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-6')" id="predButtonP-6">
+                                    <div class="count">6</div>
+                                    <div class="title predictionLabels" id="predTitleP-6"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-7')" id="predButtonP-7">
+                                    <div class="count">7</div>
+                                    <div class="title predictionLabels" id="predTitleP-7"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-8')" id="predButtonP-8">
+                                    <div class="count">8</div>
+                                    <div class="title predictionLabels" id="predTitleP-8"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-9')" id="predButtonP-9">
+                                    <div class="count">9</div>
+                                    <div class="title predictionLabels" id="predTitleP-9"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-10')" id="predButtonP-10">
+                                    <div class="count">10</div>
+                                    <div class="title predictionLabels" id="predTitleP-10"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-11')" id="predButtonP-11">
+                                    <div class="count">11</div>
+                                    <div class="title predictionLabels" id="predTitleP-11"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-12')" id="predButtonP-12">
+                                    <div class="count">12</div>
+                                    <div class="title predictionLabels" id="predTitleP-12"></div>
+                                </div>
+                                <div class="btn" onclick="enableConfirmButton('P-13')" id="predButtonP-13">
+                                    <div class="count">13</div>
+                                    <div class="title predictionLabels" id="predTitleP-13"></div>
+                                </div>
+                                <div class="title" id="confirmPrediction">
+                                    <div class="btn" onclick="">
+                                        <div class="smallBtn" onclick="nextPlayerPrediction()" id="btnConfirmPrediction">Confirm</div>
+                                        <div class="title" id=""></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                            <div class="info-box orange-bg hide" id="scorePanel">
+                                <div class="title" id="actualScore">Actual score</div>
+                                <div class="btn" onclick="ConfirmScore('S-0')">
+                                    <div class="count">0</div>
+                                    <div class="title" id="titleA"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-1')">
+                                    <div class="count">1</div>
+                                    <div class="title" id="titleA"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-2')">
+                                    <div class="count">2</div>
+                                    <div class="title" id="titleB"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-3')">
+                                    <div class="count">3</div>
+                                    <div class="title" id="titleC"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-4')">
+                                    <div class="count">4</div>
+                                    <div class="title" id="titleD"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-5')">
+                                    <div class="count">5</div>
+                                    <div class="title" id="titleE"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-6')">
+                                    <div class="count">6</div>
+                                    <div class="title" id="titleF"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-7')">
+                                    <div class="count">7</div>
+                                    <div class="title" id="titleG"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-8')">
+                                    <div class="count">8</div>
+                                    <div class="title" id="titleH"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-9')">
+                                    <div class="count">9</div>
+                                    <div class="title" id="titleI"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-10')">
+                                    <div class="count">10</div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-11')">
+                                    <div class="count">11</div>
+                                    <div class="title" id="titleI"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-12')">
+                                    <div class="count">12</div>
+                                    <div class="title" id="titleI"></div>
+                                </div>
+                                <div class="btn" onclick="ConfirmScore('S-13')">
+                                    <div class="count">13</div>
+                                    <div class="title" id="titleI"></div>
+                                </div>
+                                <div class="title" id="ConfirmScore">
+                                    <div class="btn" onclick="">
+                                        <div class="smallBtn" id="btnConfirmScore" onclick="nextPlayerScore()">Confirm S-3</div>
+                                        <div class="title" id="titleI"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+
+                    </div>
+
+                    <div class="row">
+                        <div class="row">
+
+                        </div>
+
+                        <!--/.info-box-->
+                        <!--/.col-->
+
+                        <!-- <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+            <div class="info-box brown-bg">
+              <div class="count">B</div>
+              <div class="title">Hat Brim</div>
+            </div> -->
+                        <!--/.info-box-->
+                        <!--/.col-->
+
+                        <!--/.row-->
+                    </div>
+            </section>
+				                            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                <div class="info-box green-bg hide" id="scoreboardParent">
+                                    <center>
+                                        <div class="panel-body hide" onclick=""><a class="btn btn-warning">Clear Last</a>
+                                            <span onclick=""><a class="btn btn-warning">Clear All</a></span></div>
+                                    </center>
+
+                                    <div class="count">Scoreboard</div>
+                                    <div class="playerBox hide" id="playerBoxDiv">
+                                        <div class="playerTitle" id="dynamicPlayerNames">Fin</div>
+                                        <div class="pad" id="rndPad">
+                                            <div class="title">Round:</div>
+                                            <div class="count" id="roundColumn">
+                                            </div>
+                                        </div>
+                                        <div class="pad" id="psPad">
+                                            <div class="title">Prediction/score</div>
+                                            <div class="count" id="psColumn">
+                                            </div>
+                                        </div>
+                                        <div class="pad" id="totalPad">
+                                            <div class="title">total</div>
+                                            <div class="count" id="totalsColumn">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+		</section>
+        <!--main content end-->
+    </section>
+    <!-- container section start -->
+
+    <script>
+        var players = [];
+        var playerTotals = [];
+        var inputting;
+        var scoreboardOpen;
+        var predictionIndex;
+        var round;
+        var dealer;
+        var dealerIndex;
+        var lastPlayer;
+        var prediction;
+        var score;
+        var newGame = 0; //false
+        var gameId;
+        var playerBoxDiv;
+        var labels = document.getElementsByClassName("predictionLabels");
+        var predictionsTotal = 0;
+        var roundPredictionCounter = 0;
+        var predictionCorrect = false;
+        var TrumpSuits = ["No Trump", "Spades", "Diamonds", "Clubs", "Hearts"]; //backwards
+        var TrumpsThisGame = [];
+        var maxCards = 0;
+        var multipleWinners = false;
+
+        function PopulatePlayers() {
+            document.getElementById("inpPlayersDiv").classList.add('hide');
+            players = [];
+            var forms = document.getElementsByClassName("form-control");
+            for (var i = 0, len = forms.length; i < len; i++) {
+                IteratePlayers(forms[i]);
+            }
+            InitScoreboard();
+            InitMaxCards();
+            //InitCards();
+            //begin();
+            ShowCustomRoundField();
+        }
+
+        function ShowCustomRoundField() {
+            document.getElementById("inpCustomRound").classList.remove("hide");
+            document.getElementById("customRoundApply").classList.remove("hide");
+        }
+
+        function InitMaxCards() {
+            maxCards = Math.floor(52 / players.length);
+            console.log("max caards = " + maxCards);
+        }
+
+        function InitCards() {
+            var i = maxCards;
+            for (var k = 0; k < maxCards; k++) {
+                var index = (k) % TrumpSuits.length;
+                TrumpsThisGame.unshift(TrumpSuits[index]);
+                console.log(TrumpsThisGame);
+                //console.log("round " + i + " is " + TrumpSuits[index]);
+
+            }
+            for (var j = 0; j < TrumpsThisGame.length; j++) {
+                console.log("round " + (j + 1) + " is " + TrumpsThisGame[j]);
+            }
+        }
+
+        function InitTotal(playerId) {
+            playerTotals.push(0);
+        }
+
+        function InitScoreboard() {
+            playerBoxDiv = document.getElementById("playerBoxDiv");
+            var scoreboardParent = document.getElementById("scoreboardParent");
+            for (var i = 0, len = players.length; i < len; i++) {
+                InitTotal(i);
+                var divClone = playerBoxDiv.cloneNode(true);
+                divClone.id = "playerBoxDiv" + i;
+                scoreboardParent.appendChild(divClone);
+                var children = divClone.children;
+                for (var j = 0; j < children.length; j++) {
+                    //console.log("id of element  is: " + children[j].id);
+                    var elementId = children[j].id;
+                    switch (elementId) {
+                        case "dynamicPlayerNames":
+                            children[j].innerHTML = players[i].value;
+                            break;
+                    }
+                }
+                divClone.classList.remove('hide');
+            }
+            //playerBoxDiv.classList.add('hide');
+            playerBoxDiv.remove();
+        }
+
+        function IteratePlayers(item) {
+            if (item.value != "") {
+                players.push(item);
+            }
+        }
+
+        function inputPlayers() {
+            inputting = inputting == false ? true : false
+            if (inputting) {
+                document.getElementById("inpPlayersDiv").classList.add('hide');
+            } else {
+                document.getElementById("inpPlayersDiv").classList.remove('hide');
+            }
+        }
+
+        function openScoreboard() {
+            scoreboardOpen = scoreboardOpen == false ? true : false
+            if (scoreboardOpen) {
+                document.getElementById("scoreboardDiv").classList.add('hide');
+            } else {
+                document.getElementById("scoreboardDiv").classList.remove('hide');
+            }
+        }
+
+        function begin() {
+            sendNewGame();
+            checkForCustomRound();
+            InitCards();
+            predictionIndex = 1;
+            dealerIndex = 0;
+            dealer = players[dealerIndex];
+            round = 1;
+            newGame = 1; //true
+            UpdateRound();
+            UpdateDealerName();
+            UpdatePlayername();
+            ShowNewRoundInfo(round);
+            //document.getElementById("btnConfirmPrediction").classList.add('hide');
+            document.getElementById("btnConfirmPrediction").classList.add('hide');
+            document.getElementById("scorePanel").classList.add('hide');
+            showHideComponents();
+        }
+
+        function checkForCustomRound() {
+            var input = document.getElementById("customRoundInput");
+            var param = input.value;
+
+            if (param != "") {
+				var newMax = parseInt(param);
+				if (newMax <= maxCards){
+					maxCards = newMax;
+				}
+				else
+				{
+					alert("Input must be less than " + maxCards);
+				}
+            }
+            console.log("param:::: " + param);
+        }
+
+        function showHideComponents() {
+            //show
+            document.getElementById("PlayerInformation").classList.remove("hide");
+            document.getElementById("GameInformation").classList.remove("hide");
+            document.getElementById("predictionPanel").classList.remove("hide");
+            document.getElementById("scoreboardParent").classList.remove("hide");
+            //hide
+            document.getElementById("populatePanel").classList.add("hide");
+            document.getElementById("inpCustomRound").classList.add("hide");
+            document.getElementById("customRoundApply").classList.add("hide");
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        function sendNewGame() {
+            var xmlhttp = new XMLHttpRequest();
+            var str = "newGame=1";
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    //console.log(this.responseText);
+                    console.log('gameid = ' + this.response);
+                    gameId = this.response;
+                }
+            };
+            //loop through players to allow array on other side
+            var index;
+            for (index = 0; index < players.length; ++index) {
+                str = str + '&' + 'players[]=' + players[index].value;
+            }
+            xmlhttp.open("GET", "getData.php?" + str, true);
+            xmlhttp.send();
+            //console.log("for new game sent: " + str);
+            //format str P7 for prediction 7 and S4 for scored 4
+        }
+
+        function nextPlayerScore() {
+            sendData(score);
+            populateScoreboard(score);
+
+            if (lastPlayer) {
+                newRound();
+            } else {
+                predictionIndex = (predictionIndex + 1) % players.length;
+                UpdatePlayername();
+                checkRoundPredictionsOver(predictionIndex);
+            }
+            //document.getElementById("btnConfirmPrediction").classList.add('hide');
+            //document.getElementById("btnConfirmPrediction").classList.remove('hide');
+        }
+
+        function nextPlayerPrediction() {
+            newGame = 0; //true -> false
+            roundPredictionCounter = roundPredictionCounter + 1;
+            sendData(prediction);
+            labelValueButton(prediction);
+            totalPredictions(prediction);
+            populateScoreboard(prediction);
+            if (lastPlayer) {
+                //newRound()
+
+                beginScoring();
+            } else {
+                predictionIndex = (predictionIndex + 1) % players.length;
+                UpdatePlayername();
+                checkRoundPredictionsOver(predictionIndex);
+            }
+            //document.getElementById("btnConfirmPrediction").classList.add('hide');
+            document.getElementById("btnConfirmPrediction").classList.remove('hide');
+        }
+
+        function totalPredictions(str) {
+            var predictionAmount = str.substring(2, 4) //13 or 1 work etc.
+            predictionsTotal = predictionsTotal + parseInt(predictionAmount);
+            console.log("total: " + predictionsTotal);
+            //var numOfCards = (14-round);
+            var numOfCards = (maxCards + 1 ) - round;
+            var bannedNum = numOfCards - predictionsTotal;
+            var dealerPredicting;
+            if (roundPredictionCounter == (players.length - 1)) {
+                dealerPredicting = true;
+            } else {
+                dealerPredicting = false;
+            }
+
+            if (dealerPredicting) {
+                if (bannedNum >= 0 && bannedNum <= maxCards) {
+                    var bannedNumButton = document.getElementById("predButtonP-" + bannedNum);
+                    //bannedNumButton.classList.add("hide");
+                    //bannedNumButton.classList.add("red");//indicating cannot choose
+                    //bannedNumbutton.children[0].classList.add("red");
+                    var children = bannedNumButton.children;
+                    console.log("amout of kids: " + children.length);
+                    children[0].classList.add("red");
+                }
+            }
+        }
+
+        function labelValueButton(str) {
+            var labelID = "predTitle" + str;
+            var label = document.getElementById(labelID);
+            if (label.innerHTML != "") {
+                var newLabel = label.cloneNode(true);
+                newLabel.innerHTML = players[predictionIndex].value
+                label.parentElement.appendChild(newLabel);
+            } else {
+                label.innerHTML = players[predictionIndex].value;
+            }
+        }
+
+        function UpdatePlayername() {
+            document.getElementById("playerName").innerHTML = players[predictionIndex].value;
+        }
+
+        function UpdateDealerName() {
+            document.getElementById("dealerName").innerHTML = dealer.value;
+        }
+
+        function UpdateRound() {
+            document.getElementById("roundNum").innerHTML = round;
+        }
+
+        function beginScoring() {
+            lastPlayer = false;
+            removeRed();
+            predictionIndex = (dealerIndex + 1) % players.length;
+            document.getElementById("predictionPanel").classList.add('hide');
+            document.getElementById("scorePanel").classList.remove('hide');
+            UpdateDealerName();
+            UpdatePlayername();
+        }
+
+        function removeRed() {
+            var redClassItems = document.getElementsByClassName("red");
+            if (redClassItems.length != 0) {
+                redClassItems[0].classList.remove("red");
+            }
+        }
+
+        function minusPredIndex(index) {
+            if (index == 0) {
+                return players.length - 1;
+            } else {
+                return index - 1;
+            }
+        }
+
+        function pullJson() {
+            var client = new XMLHttpRequest();
+            client.open('GET', '/games/game1.json');
+            client.onreadystatechange = function() {
+                alert(client.responseText);
+            }
+            client.send();
+        }
+
+        function sendData(data) {
+            var str = "player=" + players[predictionIndex].value + "&data=" + data + "&round=" + round + "&newGame=" + newGame + "&gameid=" + gameId + "&playerId=" + predictionIndex;
+            console.log("sending " + str);
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    console.log(this.responseText);
+                }
+            };
+            xmlhttp.open("GET", "getData.php?" + str, true);
+            xmlhttp.send();
+            //format str P7 for prediction 7 and S4 for scored 4
+        }
+
+        function checkRoundPredictionsOver(currentPlayerPredicting) {
+            console.log("pred: " + predictionIndex);
+            console.log("deal: " + dealerIndex);
+            if (predictionIndex == dealerIndex) {
+                lastPlayer = true;
+            } else {
+                lastPlayer = false;
+            }
+        }
+
+        //WIP
+        function populateScoreboard(data) {
+            var playerName = players[predictionIndex].value;
+            var playerBoxes = document.getElementsByClassName("playerBox");
+            for (var i = 0; i < playerBoxes.length; i++) {
+                var currentBox = playerBoxes[i];
+                if (currentBox.id == "playerBoxDiv" + predictionIndex) {
+
+                    //look in children for round, ps and total fields.
+                    var children = currentBox.children;
+                    console.log("number of kids = " + children.length);
+                    for (var j = 0; j < children.length; j++) {
+                        console.log(children[j].id);
+                        var type = data.substring(0, 1);
+                        switch (children[j].id) {
+                            case ("rndPad"):
+                                if (type == "P") {
+                                    var kids = children[j].children;
+                                    var html = kids[1].innerHTML;
+                                    html = html + round + ":<br>";
+                                    kids[1].innerHTML = html;
+                                }
+                                break;
+                            case ("psPad"):
+                                //if p or s
+                                var value = data.substring(2, 4);
+                                var kids = children[j].children;
+                                var html = kids[1].innerHTML;
+                                switch (type) {
+                                    case ("P"):
+                                        //add "/" after
+                                        kids[1].innerHTML = html + value + "/";
+                                        break;
+                                    case ("S"):
+                                        //add <br>
+                                        kids[1].innerHTML = html + value + "<br>";
+                                        CheckIfPredictionCorrect(html, value);
+                                        break;
+                                }
+                                break;
+                            case ("totalPad"):
+                                //if p or s
+                                var newVal;
+                                var value = data.substring(2, 4);
+                                var kids = children[j].children;
+                                var html = kids[1].innerHTML;
+                                html = html.replace(/ /g, '');
+                                console.log("html is :" + html);
+                                switch (type) {
+                                    //hmmm 2 d arrtray with scores n player index?
+                                    case ("S"):
+                                        //add <br>
+                                        roundTotalValue = GetRoundScore(predictionCorrect, value);
+                                        TotalPlayerScore(i, roundTotalValue);
+                                        playerTotalScore = FetchPlayerScore(i);
+                                        console.log("player " + i + "'s total is " + playerTotalScore);
+
+                                        kids[1].innerHTML = html + playerTotalScore + "<br>";
+                                        /**if (round == 1){
+                                        	html = html.replace(/ /g, '');
+                                        	kids[1].innerHTML = html + playerTotalScore + "<br>";
+                                        }
+                                        else if (round == 2){
+                                        	html = html.replace(/ /g, '');
+                                        	var prevTotal = html.substring(0, 1);
+                                        	console.log("2previous total is " + prevTotal);
+                                        	var newTotal = prevTotal + parseInt(value);
+                                        	kids[1].innerHTML = html + newTotal;
+                                        }
+                                        else{
+                                        	html = html.replace(/ /g, '');
+                                        	var prevTotal = html.split('>').pop();
+                                        	console.log("3previous total is " + prevTotal);
+                                        	var newTotal = prevTotal + parseInt(value);
+                                        	kids[1].innerHTML = html + newTotal;
+                                        }**/
+                                        break;
+                                }
+                        }
+                    }
+                }
+            }
+
+        }
+
+        function FetchPlayerScore(playerId) {
+            console.log(playerTotals);
+            console.log(playerId);
+            return playerTotals[playerId];
+        }
+
+        function TotalPlayerScore(playerIndex, value) {
+            var currentScore = playerTotals[playerIndex];
+            var newval = parseInt(currentScore) + parseInt(value);
+            playerTotals[playerIndex] = newval;
+        }
+
+        function GetRoundScore(predictionCorrect, value) {
+            if (predictionCorrect) {
+                newvalue = 10 + parseInt(value);
+            } else {
+                newvalue = parseInt(value);
+            }
+
+            return newvalue;
+        }
+
+        function CheckIfPredictionCorrect(html, score) {
+            var predSlash = html.slice(-2);
+            var predictionVal = predSlash.substring(0, 1);
+            var predInt = parseInt(predictionVal);
+            var scoreInt = parseInt(score);
+            if (scoreInt == predInt) {
+                console.log("predictionCorrect");
+                predictionCorrect = true;
+            } else {
+                predictionCorrect = false;
+            }
+        }
+
+        function newRound() {
+            round = round + 1;
+            if (round < maxCards + 1) {
+                predictionsTotal = 0;
+                roundPredictionCounter = 0;
+                UpdateRound();
+
+                dealerIndex = (dealerIndex + 1) % players.length;
+                dealer = players[dealerIndex];
+                UpdateDealerName();
+                predictionIndex = (dealerIndex + 1) % players.length;
+                UpdatePlayername();
+                lastPlayer = false;
+                document.getElementById("scorePanel").classList.add('hide');
+                document.getElementById("predictionPanel").classList.remove('hide');
+                ClearLabels();
+                ShowNewRoundInfo(round);
+            } else {
+                displayWinner();
+            }
+        }
+
+        function ShowNewRoundInfo(round) {
+            document.getElementById("TrumpDisplay").innerHTML = TrumpsThisGame[round - 1];
+            document.getElementById("NumCards").innerHTML = (maxCards + 1) - round;
+        }
+
+        function ClearLabels() {
+            for (var k = 0; k < labels.length - 1; k++) {
+                if (labels[k].innerHTML != "") {
+                    labels[k].innerHTML = "";
+                }
+            }
+        }
+
+        function enableConfirmButton(str) {
+            //document.getElementById("btnConfirmPrediction").classList.remove('hide');
+            document.getElementById("btnConfirmPrediction").classList.remove('hide');
+            document.getElementById("btnConfirmPrediction").innerHTML = 'Confirm ' + str;
+            prediction = str;
+        }
+
+        function ConfirmScore(str) {
+            document.getElementById("btnConfirmScore").classList.remove('hide');
+            document.getElementById("btnConfirmScore").innerHTML = 'Confirm ' + str;
+            score = str;
+        }
+
+        function displayWinner() {
+            var winner = fetchWinner() + '';
+			var text = "";
+            if (multipleWinners) {
+				var winners = winner.split("/");
+				//console.log(winners); 
+				for (var i = 0; i < winners.length; i++){
+					var w = winners[i];
+					//console.log("win::" + w + "///i::" + i);
+					var intWinner = parseInt(w);
+					//console.log("int win::"  + intWinner);
+					var name = players[parseInt(w)].value;
+					if (i == winners.length - 1){
+						text = text + name;
+					}
+					else
+					{
+						text = text + name + " & ";
+					}
+				}
+				//text = "winner1" + " & " + "winner2 etc";
+				console.log("mulitple winners:::: " + winner);
+            } else {
+				text = players[winner].value;
+            }
+            document.getElementById("winnerName").innerHTML = text;
+            document.getElementById("winnerPanel").classList.remove('hide');
+            document.getElementById("inpDiv").classList.add('hide');
+            document.getElementById("GameInformation").classList.add('hide');
+            document.getElementById("PlayerInformation").classList.add('hide');
+        }
+
+        function fetchWinner() {
+            var highestValue = 0;
+            var winningPlayerId;
+
+            for (var i = 0; i < playerTotals.length; i++) {
+                if (+playerTotals[i] > +highestValue) {
+                    highestValue = playerTotals[i];
+                    winningPlayerId = i;
+                } else if (+playerTotals[i] == +highestValue) {
+                    multipleWinners = true;
+					winningPlayerId = winningPlayerId + "/" + i;
+                }
+            }
+            return winningPlayerId;
+        }
+    </script>
+
+</body>
+
+</html>
